@@ -3,8 +3,8 @@ const conexao = require('../infraestrutura/conexao');
 
 class Atendimento {
   adiciona(atendimento, res) {
-    const dataCriacao = moment().format('YYYY-MM-DD HH:MM');
-    const data = moment(atendimento.data, 'DD/MM/YYYY').format('YYYY-MM-DD HH:MM:SS');
+    const dataCriacao = moment().format('YYYY-MM-DD HH:mm:ss');
+    const data = moment(atendimento.data, 'DD/MM/YYYY').format('YYYY-MM-DD HH:mm:ss');
 
     const dataEhValida = moment(data).isSameOrAfter(dataCriacao);
     const clienteEhValido = atendimento.cliente.length >= 5;
@@ -40,6 +40,18 @@ class Atendimento {
         }
       });
     }
+  }
+
+  lista(res) {
+    const sql = 'SELECT * FROM Atendimentos';
+
+    conexao.query(sql, (erro, resultados) => {
+      if (erro) {
+        res.status(400).json(erro);
+      } else {
+        res.status(200).json(resultados);
+      }
+    });
   }
 }
 
