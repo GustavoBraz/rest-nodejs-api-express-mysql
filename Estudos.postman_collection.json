@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "5baa9820-766d-4215-9450-bd11381eac4a",
+		"name": "Estudos",
+		"description": "Collections utilizadas nos estudos de Nodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cria Atendimento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cliente",
+							"value": "Seu Nome",
+							"type": "text"
+						},
+						{
+							"key": "pet",
+							"value": "Seu Pet",
+							"type": "text"
+						},
+						{
+							"key": "servico",
+							"value": "Serviço",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Agendado",
+							"type": "text"
+						},
+						{
+							"key": "observacoes",
+							"value": "Observação do Pet",
+							"type": "text"
+						},
+						{
+							"key": "data",
+							"value": "08/04/2025",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/atendimentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"atendimentos"
+					]
+				},
+				"description": "Envio de POST para criar um atendimento no banco de dados."
+			},
+			"response": []
+		},
+		{
+			"name": "Lista todos os Atendimentos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/atendimentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"atendimentos"
+					]
+				},
+				"description": "GET para listar todos os atendimentos incluídos no banco de dados."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
