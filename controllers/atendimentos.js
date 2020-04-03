@@ -10,8 +10,10 @@ module.exports = app => {
   });
 
   app.post('/atendimentos', (req, res) => {
-    const atendimento = req.body;
+    Atendimento.adiciona(req.body, res);
+  });
 
-    Atendimento.adiciona(atendimento, res);
+  app.patch('/atendimentos/:id', (req, res) => {
+    Atendimento.altera(+req.params.id, req.body, res);
   });
 }
