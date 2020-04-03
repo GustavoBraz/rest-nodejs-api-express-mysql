@@ -16,4 +16,8 @@ module.exports = app => {
   app.patch('/atendimentos/:id', (req, res) => {
     Atendimento.altera(+req.params.id, req.body, res);
   });
+
+  app.delete('/atendimentos/:id', (req, res) => {
+    Atendimento.deleta(+req.params.id, res);
+  });
 }

@@ -22,7 +22,7 @@
 					"urlencoded": [
 						{
 							"key": "cliente",
-							"value": "Seu Nome",
+							"value": "Nome",
 							"type": "text"
 						},
 						{
@@ -47,7 +47,7 @@
 						},
 						{
 							"key": "data",
-							"value": "08/04/2025",
+							"value": "08/04/2023",
 							"type": "text"
 						}
 					]
@@ -73,17 +73,116 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/atendimentos",
+					"raw": "http://localhost:3000/atendimentos/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"atendimentos"
+						"atendimentos",
+						""
 					]
 				},
 				"description": "GET para listar todos os atendimentos incluídos no banco de dados."
+			},
+			"response": []
+		},
+		{
+			"name": "Busca por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/atendimentos/122",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"atendimentos",
+						"122"
+					]
+				},
+				"description": "Busca Atendimento a partir de seu id passado via GET."
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza Atendimento",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cliente",
+							"value": "Novo Nome",
+							"type": "text"
+						},
+						{
+							"key": "pet",
+							"value": "Seu Pet",
+							"type": "text"
+						},
+						{
+							"key": "servico",
+							"value": "Serviço Novo",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Agendado",
+							"type": "text"
+						},
+						{
+							"key": "observacoes",
+							"value": "Observação do Pet",
+							"type": "text"
+						},
+						{
+							"key": "data",
+							"value": "01/02/2027",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/atendimentos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"atendimentos",
+						"1"
+					]
+				},
+				"description": "Atualiza dados de um atendimento a partir de seu id."
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Atendimento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/atendimentos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"atendimentos",
+						"1"
+					]
+				},
+				"description": "Deleta um Atendimento a partir de seu id."
 			},
 			"response": []
 		}
